@@ -9,3 +9,7 @@ Lista de mudanças, melhorias e correções de bugs.
 ### *v1.0.0 - (05 Outubro 2018)*
 
 - Criação e configuração da bilbioteca
+
+### *v1.0.1 - (05 Outubro 2018)*
+
+- Correção do método setAmount
