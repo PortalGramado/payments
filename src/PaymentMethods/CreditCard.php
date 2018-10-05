@@ -75,7 +75,7 @@ class CreditCard
     public function setAmount($valor)
     {
         // Valor da compra
-        $this->payload['amount'] = $valor * 100;
+        $this->payload['amount'] = (int) number_format($valor * 100, 0, "", "");
 
         return $this;
     }
@@ -107,9 +107,10 @@ class CreditCard
     public function setNumberCard(string $number_card)
     {
         $number_card = str_replace(" ", "", $number_card);
-        $number_card = preg_replace("/[^0-9]/", "", $number_card);
 
-        $this->number_card = $number_card;
+        $this->number_card = preg_replace("/[^0-9]/", "", $number_card);
+
+        return $this;
     }
 
     /**
