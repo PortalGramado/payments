@@ -1,0 +1,21 @@
+{
+  "name": "portalgramado/payments",
+  "description": "Barramento de pagamentos do Portal Gramado",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thiago Primitivo",
+      "email": "thiago.primitivo@portalgramado.com.br"
+    },
+    {
+      "name": "Ataides Rodrigues",
+      "email": "ataides@portalgramado.com.br"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PortalGramado\\Payments\\": "src/"
+    }
+  },
+  "require": {}
+}
