@@ -9,7 +9,7 @@ class RequestConnect
     /**
      * Url base da API de pagamentos
      */
-    const URL_BASE_API = 'https://api-sandbox.getnet.com.br';
+    const URL_BASE_API = 'https://api.getnet.com.br';
 
     /**
      * Url base da API de pagamentos - sandbox
@@ -30,7 +30,7 @@ class RequestConnect
         curl_setopt_array($curl, [
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_URL => self::URL_BASE_API . $path,
+            CURLOPT_URL => self::getUrlBase() . $path,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_CUSTOMREQUEST => $method,
@@ -90,15 +90,6 @@ class RequestConnect
         $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         $error_curl = curl_error($curl);
-
-        /*if($path == '/v1/payments/credit'){
-            $resp = $response;
-            $response = json_decode($response) ;
-
-            if(is_null($response)) {
-                $response = json_decode(gzdecode($resp));
-            };
-        }*/
 
         curl_close($curl);
 

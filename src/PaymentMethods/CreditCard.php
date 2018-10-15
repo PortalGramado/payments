@@ -104,6 +104,12 @@ class CreditCard
         return $this;
     }
 
+    /**
+     * Numero do cartao
+     *
+     * @param string $number_card
+     * @return $this
+     */
     public function setNumberCard(string $number_card)
     {
         $number_card = str_replace(" ", "", $number_card);
