@@ -79,8 +79,11 @@ class Authentication
         // Token devolvido pela API
         $token_access = self::authenticate();
 
+        // Expires token
+        $expires = Carbon::now()->addSeconds($token_access->expires_in - 1200);
+
         // Coloca o token em cache, retirando 20 minutos do tempo de expiração
-        Cache::put(self::TOKEN_CACHE, $token_access->access_token, $token_access->expires_in - 1200);
+        Cache::put(self::TOKEN_CACHE, $token_access->access_token, $expires);
 
         return $token_access->access_token;
     }

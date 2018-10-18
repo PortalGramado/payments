@@ -21,6 +21,10 @@ CLIENT_SECRET=
 
 Lista de mudanças, melhorias e correções de bugs.
 
+### *v1.0.3 - (18 Outubro 2018)*
+
+- Arrumado o expires_in no cache do token de autenticação da Getnet
+
 ### *v1.0.2 - (15 Outubro 2018)*
 
 - Correção da URL de produção da GetNet
