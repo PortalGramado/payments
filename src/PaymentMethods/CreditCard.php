@@ -208,7 +208,8 @@ class CreditCard
         // Caso falhe a transação
         return [
             'approved' => false,
-            'erro' => $response_api->message ?? "Não foi possível efetuar o pagamento!"
+            'erro' => $response_api->message ?? "Não foi possível efetuar o pagamento!",
+            'response' => $response_api
         ];
     }
 

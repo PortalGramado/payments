@@ -118,7 +118,8 @@ class RequestConnect
 
             return (object) [
                 'status' => "error",
-                'message' => "Falha na comunicação com a central de pagamentos: $error_curl"
+                'message' => "Falha na comunicação com a central de pagamentos: $error_curl",
+                'response' => $response
             ];
         }
 
