@@ -15,14 +15,6 @@ trait Order
     {
         $this->payload['order']['order_id'] = $order_id;
 
-        // Valor de impostos
-        $this->payload['order']['sales_tax'] = 0;
-
-        // Tipo do produto
-        $this->payload['order']['product_type'] = 'service';
-
         return $this;
     }
-
-
 }

@@ -21,6 +21,10 @@ CLIENT_SECRET=
 
 Lista de mudanças, melhorias e correções de bugs.
 
+### *v1.0.6 - (20 Outubro 2018)*
+
+- Ajustado metodo para parcelamento, quando for 1 parcela envia como FULL
+
 ### *v1.0.5 - (18 Outubro 2018)*
 
 - Adicionado a casa `response` a todos os métodos de pagamento

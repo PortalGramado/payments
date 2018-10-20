@@ -34,11 +34,9 @@ class CreditCard
         ],
         'credit' => [
             'delayed' => false,
-            'authenticated' => false,
-            'pre_authorization' => false,
             'save_card_data' => false,
-            'transaction_type' => 'INSTALL_WITH_INTEREST',
-            'number_installments' => 0,
+            'transaction_type' => 'FULL',
+            'number_installments' => 1,
             'soft_descriptor' => '',
             'card' => [
                 'number_token' => '',
@@ -85,9 +83,13 @@ class CreditCard
      * @param $number_installments
      * @return $this
      */
-    public function setNumberInstallments($number_installments)
+    public function setNumberInstallments(int $number_installments)
     {
         $this->payload['credit']['number_installments'] = $number_installments;
+
+        if($number_installments > 1) {
+            $this->payload['credit']['transaction_type'] = "INSTALL_NO_INTEREST";
+        }
 
         return $this;
     }
